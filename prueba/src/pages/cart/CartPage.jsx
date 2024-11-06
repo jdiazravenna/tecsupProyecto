@@ -8,7 +8,7 @@ import { Timestamp, addDoc, collection } from "firebase/firestore";
 import { fireDB } from "../../firebase/FirebaseConfig";
 import BuyNowModal from "../../components/buyNowModal/BuyNowModal";
 import { Navigate } from "react-router";
-
+ 
 const CartPage = () => {
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
@@ -201,7 +201,7 @@ const CartPage = () => {
                                     </div>
                                     <div className="flex items-center justify-between border-y border-dashed py-4 ">
                                         <dt className="text-base font-medium text-gray-900">Total Amount</dt>
-                                        <dd className="text-base font-medium text-gray-900">₹ {cartTotal}</dd>
+                                        <dd className="text-base font-medium text-gray-900">S/ {cartTotal}</dd>
                                     </div>
                                 </dl>
                                 <div className="px-2 pb-4 font-medium text-green-700">
