@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+// /* eslint-disable react/prop-types */
 // import {
 //     Button,
 //     Dialog,
@@ -7,20 +7,19 @@
 import { useState } from "react";
 
 const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(!open);
-
     return (
         <>
             {/* <button
                 type="button"
                 onClick={handleOpen}
-                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
+                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
             >
                 Buy now
             </button> */}
-            <main open={open} handler={handleOpen} className="bg-blue-gray-300 w-full">
+            <main open={open} handler={handleOpen} className=" bg-gray-200 w-full">
                 <body className="">
                     <div className="mb-3">
                         <input
@@ -34,7 +33,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                 })
                             }}
                             placeholder='Enter your name'
-                            className='bg-blue-gray-100 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
+                            className='bg-gray-200 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
                         />
                     </div>
                     <div className="mb-3">
@@ -49,7 +48,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                 })
                             }}
                             placeholder='Enter your address'
-                             className='bg-blue-gray-100 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
+                            className='bg-gray-200 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
                         />
                     </div>
 
@@ -64,8 +63,8 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                     pincode: e.target.value
                                 })
                             }}
-                            placeholder='Enter your PostalCode'
-                             className='bg-blue-gray-100 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
+                            placeholder='Enter your pincode'
+                            className='bg-gray-200 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
                         />
                     </div>
 
@@ -81,7 +80,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                 })
                             }}
                             placeholder='Enter your mobileNumber'
-                             className='bg-blue-gray-100 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
+                            className='bg-gray-200 border border-black px-2 py-2 w-full rounded-md outline-none text-black placeholder-gray-700'
                         />
                     </div>
 
@@ -93,7 +92,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
                                 handleOpen();
                                 buyNowFunction();
                             }}
-                            className="w-full px-4 py-3 text-center text-gray-100 bg-green-900 border border-transparent dark:border-gray-700 rounded-lg"
+                            className="w-full px-4 py-3 text-center text-gray-100 bg-green-800 border border-transparent dark:border-gray-700 rounded-lg"
                         >
                             Buy now
                         </button>
@@ -103,6 +102,6 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
             </main>
         </>
     );
-};
+}
 
 export default BuyNowModal;

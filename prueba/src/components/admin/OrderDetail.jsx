@@ -106,7 +106,7 @@ const OrderDetail = () => {
                                         {order.cartItems.map((item, index) => {
                                             const { id, productImageUrl, title, category, price, quantity } = item
                                             return (
-                                                <tr key={index} className="text-pink-300">
+                                                <tr key={index} className="text-black">
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 ">
                                                         {index + 1}
                                                     </td>
@@ -128,7 +128,7 @@ const OrderDetail = () => {
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        ₹{price}
+                                                        S/ {price}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
@@ -136,7 +136,7 @@ const OrderDetail = () => {
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        ₹{price * quantity}
+                                                        S/ {price * quantity}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l text-green-600  first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">

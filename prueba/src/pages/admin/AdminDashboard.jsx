@@ -13,16 +13,17 @@ const AdminDashboard = () => {
         <div>
             {/* Top */}
             <div className="top mb-5 px-5 mt-5">
-                <div className=" bg-teal-700 py-5 border border-pink-100 rounded-lg">
+                <div className=" bg-teal-700 py-5 border border-black rounded-lg">
                     <h1 className=" text-center text-2xl font-bold text-white">Admin Dashboard</h1>
                 </div>
             </div>
+            <button>Cerrar sesion</button>
 
             <div className="px-5">
                 {/* Mid  */}
                 <div className="mid mb-5">
                     {/* main  */}
-                    <div className=" bg-teal-400 py-5 rounded-xl border border-pink-100">
+                    <div className=" bg-teal-400 py-5 rounded-xl border border-black">
                         {/* image  */}
                         <div className="flex justify-center">
                             <img src="https://cdn-icons-png.flaticon.com/128/2202/2202112.png" alt="" />
@@ -62,7 +63,7 @@ const AdminDashboard = () => {
                         <TabList className="flex flex-wrap -m-4 text-center justify-center">
                             {/* Total Products */}
                             <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
-                                <div className=" border bg-teal-400 hover:bg-teal-500 border-pink-100 px-4 py-3 rounded-xl" >
+                                <div className=" border bg-teal-400 hover:bg-teal-500 border-black px-4 py-3 rounded-xl" >
                                     <div className="text-white w-12 h-12 mb-3 inline-block" >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +94,7 @@ const AdminDashboard = () => {
 
                             {/* Total Order  */}
                             <Tab className="p-4 md:w-1/4 sm:w-1/2 w-full cursor-pointer">
-                                <div className=" border bg-teal-400 hover:bg-teal-500 border-pink-100 px-4 py-3 rounded-xl" >
+                                <div className=" border bg-teal-400 hover:bg-teal-500 border-black px-4 py-3 rounded-xl" >
                                     <div className="text-white w-12 h-12 mb-3 inline-block" >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +123,7 @@ const AdminDashboard = () => {
 
                             {/* Total User  */}
                             <Tab className="p-4 md:w-1/3 sm:w-1/2 w-full cursor-pointer">
-                                <div className=" border bg-teal-400 hover:bg-teal-500 border-white px-4 py-3 rounded-xl" >
+                                <div className=" border bg-teal-400 hover:bg-teal-500 border-black px-4 py-3 rounded-xl" >
                                     <div className="text-white w-12 h-12 mb-3 inline-block" >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
