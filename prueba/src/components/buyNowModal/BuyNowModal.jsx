@@ -10,12 +10,13 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
     const [open, setOpen] = useState(true);
 
     const handleOpen = () => setOpen(!open);
+
     return (
         <>
             {/* <button
                 type="button"
                 onClick={handleOpen}
-                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent dark:border-gray-700 hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
+                className="w-full px-4 py-3 text-center text-gray-100 bg-pink-600 border border-transparent hover:border-pink-500 hover:text-pink-700 hover:bg-pink-100 rounded-xl"
             >
                 Buy now
             </button> */}
@@ -102,6 +103,6 @@ const BuyNowModal = ({ addressInfo, setAddressInfo, buyNowFunction }) => {
             </main>
         </>
     );
-}
+};
 
 export default BuyNowModal;

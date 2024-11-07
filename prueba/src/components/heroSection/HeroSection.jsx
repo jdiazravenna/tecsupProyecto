@@ -1,7 +1,7 @@
 const HeroSection = () => {
     return (
-        <div>
-           <img className=" h-44 lg:h-full" src="../img/hero3.png" alt="" />
+        <div className="flex items-center justify-center ">
+            <img className="h-44 lg:h-full object-cover" src="../img/hero3.png" alt="Hero Image" />
         </div>
     );
 }
