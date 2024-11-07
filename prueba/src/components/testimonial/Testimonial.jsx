@@ -20,12 +20,12 @@ const Testimonial = () => {
                   src="https://via.placeholder.com/80"
                 />
                 <p className="leading-relaxed">
-                  Francesca Rezza is a passionate technology enthusiast and a
-                  dedicated student of Systems Engineering. She is on a journey
-                  to become a skilled Full Stack Developer, with a keen interest
-                  in constantly learning and embracing new challenges. Francesca
-                  aims to create impactful solutions and contribute to the tech
-                  world.
+                  I am Francesca Rezza, a passionate technology enthusiast and a
+                  Systems Engineering student. I'm on a journey to become a
+                  skilled Full Stack Developer, with a strong interest in
+                  continuous learning and embracing new challenges. My goal is
+                  to create impactful solutions and make a meaningful
+                  contribution to the tech world.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
@@ -44,7 +44,10 @@ const Testimonial = () => {
                   src="https://ecommerce-sk.vercel.app/img/kamal.png"
                 />
                 <p className="leading-relaxed">
-                Senior programmer, trained in Python, Java, React, Javascript, Tailwind, Firebase, with 6 years of experience, has managed to create this ecommerce, along with the team made up of great professionals dedicated to their passion, programming.
+                  Senior programmer, trained in Python, Java, React, Javascript,
+                  Tailwind, Firebase, with 6 years of experience, has managed to
+                  create this ecommerce, along with the team made up of great
+                  professionals dedicated to their passion, programming.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
@@ -57,7 +60,7 @@ const Testimonial = () => {
             {/* Placeholder Testimonial 3 */}
             <div className="lg:w-1/3 lg:mb-0 p-4">
               <div className="h-full text-center">
-              <img
+                <img
                   alt="testimonial"
                   className="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100"
                   src="https://ecommerce-sk.vercel.app/img/kamal.png"
