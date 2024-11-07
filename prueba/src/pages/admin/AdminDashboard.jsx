@@ -4,11 +4,20 @@ import OrderDetail from '../../components/admin/OrderDetail';
 import UserDetail from '../../components/admin/UserDetail';
 import { useContext } from 'react';
 import myContext from '../../context/myContext';
+import { LogOut } from 'lucide-react';
+
+
 
 const AdminDashboard = () => {
     const user = JSON.parse(localStorage.getItem('users'));
     const context = useContext(myContext);
     const {getAllProduct, getAllOrder, getAllUser} = context;
+
+       // logout function 
+       const logout = () => {
+        localStorage.clear('users');
+        navigate("/")
+    }
     return (
         <div>
             {/* Top */}
@@ -17,7 +26,8 @@ const AdminDashboard = () => {
                     <h1 className=" text-center text-2xl font-bold text-white">Admin Dashboard</h1>
                 </div>
             </div>
-            <button>Cerrar sesion</button>
+
+          <a href="/" type="button" className='border m-5 p-2 rounded-lg bg-red-600 text-white'>Volver al Home</a>
 
             <div className="px-5">
                 {/* Mid  */}

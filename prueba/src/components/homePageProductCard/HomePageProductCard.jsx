@@ -70,6 +70,7 @@ const HomePageProductCard = () => {
                                                     </button>
                                                 ) : (
                                                     <button
+                                            
                                                         onClick={() => addCart(item)}
                                                         className="w-full text-sm py-2 rounded-lg font-semibold bg-blue-500 hover:bg-blue-700 text-white transition-colors">
                                                         Add to Cart

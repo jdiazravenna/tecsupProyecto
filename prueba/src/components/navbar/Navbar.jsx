@@ -13,7 +13,7 @@ const Navbar = () => {
     // logout function 
     const logout = () => {
         localStorage.clear('users');
-        navigate("/login")
+        navigate("/")
     }
 
     // CartItems
@@ -58,10 +58,20 @@ const Navbar = () => {
             </li>}
 
             {/* Cart */}
-            <li>
-                <Link to={'/cart'}>
+            <li>            
+                {user?.role === "user" && <li>
+                    <Link to={'/cart'}>
                     Cart({cartItems.length})
-                </Link>
+                    </Link></li>}
+                    
+                {/* <Link to={'/cart'}>
+                    Cart({cartItems.length})
+                </Link> */}
+            </li>
+            <li>
+                {user?.role !="user" && user?.role!="admin" &&
+                <span className="text-red-300 font-extrabold">to purchase, login or create an account</span>
+                }
             </li>
         </ul>
     )
