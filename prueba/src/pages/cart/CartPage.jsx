@@ -12,10 +12,12 @@ import { Navigate } from "react-router";
 export function CartPage() {
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+    
 
     const deleteCart = (item) => {
         dispatch(deleteFromCart(item));
         toast.success("Delete cart");
+        console.log(item)
     };
 
     const handleIncrement = (id) => {
@@ -189,7 +191,7 @@ export function CartPage() {
                                 <dl className=" space-y-1 px-2 py-4">
                                     <div className="flex items-center justify-between">
                                         <dt className="text-sm text-gray-800">Price ({cartItemTotal} item)</dt>
-                                        <dd className="text-sm font-medium text-gray-900">S/ {cartTotal}</dd>
+                                        <dd className="text-sm font-medium text-gray-900">S/{cartTotal}</dd>
                                     </div>
                                     <div className="flex items-center justify-between py-4">
                                         <dt className="flex text-sm text-gray-800">
@@ -199,13 +201,13 @@ export function CartPage() {
                                     </div>
                                     <div className="flex items-center justify-between border-y border-dashed py-4 ">
                                         <dt className="text-base font-medium text-gray-900">Total Amount</dt>
-                                        <dd className="text-base font-medium text-gray-900">S/ {cartTotal}</dd>
+                                        <dd className="text-base font-medium text-gray-900">S/{cartTotal}</dd>
                                     </div>
                                 </dl>
                                 <div className="px-2 pb-4 font-medium text-green-700">
                                     <div className="flex gap-4 mb-6">
                                         {user
-                                            ? <BuyNowModal
+                                            ? <BuyNowModal 
                                                 addressInfo={addressInfo}
                                                 setAddressInfo={setAddressInfo}
                                                 buyNowFunction={buyNowFunction} /> : <Navigate to={'/login'} />}

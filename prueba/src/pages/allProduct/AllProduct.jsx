@@ -61,13 +61,13 @@ const AllProduct = () => {
                                         />
                                         <div className="p-6">
                                             <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">
-                                                E-bharat
+                                                E-Commerce
                                             </h2>
                                             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                                                 {title.substring(0, 25)}
                                             </h1>
                                             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                                                ₹{price}
+                                                S/ {price}
                                             </h1>
 
                                             <div
@@ -77,7 +77,7 @@ const AllProduct = () => {
                                                 ?
                                                 <button
                                                     onClick={() => deleteCart(item)}
-                                                    className=" bg-red-700 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold">
+                                                    className=" bg-red-700 hover:bg-red-900 w-full text-white py-[4px] rounded-lg font-bold">
                                                     Delete From Cart
                                                 </button>
 
@@ -85,7 +85,7 @@ const AllProduct = () => {
 
                                                 <button
                                                     onClick={() => addCart(item)}
-                                                    className=" bg-pink-500 hover:bg-pink-600 w-full text-white py-[4px] rounded-lg font-bold">
+                                                    className=" bg-green-700 hover:bg-green-900 w-full text-white py-[4px] rounded-lg font-bold">
                                                     Add To Cart
                                                 </button>
                                             }
