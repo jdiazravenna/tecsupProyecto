@@ -55,7 +55,7 @@ const AllProduct = () => {
                                     <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-md cursor-pointer">
                                         <img
                                             onClick={() => navigate(`/productinfo/${id}`)}
-                                            className="lg:h-80  h-96 w-full"
+                                             className="h-64 w-full object-cover"
                                             src={productImageUrl}
                                             alt="blog"
                                         />
