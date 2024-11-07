@@ -92,7 +92,7 @@ const UserDashboard = () => {
 
                                                             <div className="mb-4">
                                                                 <div className="text-sm font-semibold">Total Amount</div>
-                                                                <div className="text-sm font-medium text-gray-900">₹ {price * quantity}</div>
+                                                                <div className="text-sm font-medium text-gray-900">S/ {price * quantity}</div>
                                                             </div>
 
                                                             <div className="mb-4">
