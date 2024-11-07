@@ -44,10 +44,7 @@ const Testimonial = () => {
                   src="https://ecommerce-sk.vercel.app/img/kamal.png"
                 />
                 <p className="leading-relaxed">
-                  Edison bulb retro cloud bread echo park, helvetica stumptown
-                  taiyaki taxidermy 90's cronut +1 kinfolk. Single-origin coffee
-                  ennui shaman taiyaki vape DIY tote bag drinking vinegar cronut
-                  adaptogen squid fanny pack vaporware.
+                Senior programmer, trained in Python, Java, React, Javascript, Tailwind, Firebase, with 6 years of experience, has managed to create this ecommerce, along with the team made up of great professionals dedicated to their passion, programming.
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
