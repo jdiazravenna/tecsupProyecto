@@ -9,14 +9,14 @@ import { fireDB } from "../../firebase/FirebaseConfig";
 import BuyNowModal from "../../components/buyNowModal/BuyNowModal";
 import { Navigate } from "react-router";
  
-const CartPage = () => {
+export function CartPage() {
     const cartItems = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
     const deleteCart = (item) => {
         dispatch(deleteFromCart(item));
-        toast.success("Delete cart")
-    }
+        toast.success("Delete cart");
+    };
 
     const handleIncrement = (id) => {
         dispatch(incrementQuantity(id));
@@ -27,7 +27,6 @@ const CartPage = () => {
     };
 
     // const cartQuantity = cartItems.length;
-
     const cartItemTotal = cartItems.map(item => item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
 
     const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
@@ -35,11 +34,11 @@ const CartPage = () => {
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
-        console.log(cartItems)
-    }, [cartItems])
+        console.log(cartItems);
+    }, [cartItems]);
 
     // user
-    const user = JSON.parse(localStorage.getItem('users'))
+    const user = JSON.parse(localStorage.getItem('users'));
 
     // Buy Now Function
     const [addressInfo, setAddressInfo] = useState({
@@ -61,7 +60,7 @@ const CartPage = () => {
     const buyNowFunction = () => {
         // validation 
         if (addressInfo.name === "" || addressInfo.address === "" || addressInfo.pincode === "" || addressInfo.mobileNumber === "") {
-            return toast.error("All Fields are required")
+            return toast.error("All Fields are required");
         }
 
         // Order Info 
@@ -80,7 +79,7 @@ const CartPage = () => {
                     year: "numeric",
                 }
             )
-        }
+        };
         try {
             const orderRef = collection(fireDB, 'order');
             addDoc(orderRef, orderInfo);
@@ -89,13 +88,13 @@ const CartPage = () => {
                 address: "",
                 pincode: "",
                 mobileNumber: "",
-            })
-            toast.success("Order Placed Successfull")
+            });
+            toast.success("Order Placed Successfull");
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
 
-    }
+    };
     return (
         <Layout>
             <div className="container mx-auto px-4 max-w-7xl lg:px-0">
@@ -113,7 +112,7 @@ const CartPage = () => {
 
                                     <>
                                         {cartItems.map((item, index) => {
-                                            const { id, title, price, productImageUrl, quantity, category } = item
+                                            const { id, title, price, productImageUrl, quantity, category } = item;
                                             return (
                                                 <div key={index} className="">
                                                     <li className="flex py-6 sm:py-6 ">
@@ -121,8 +120,7 @@ const CartPage = () => {
                                                             <img
                                                                 src={productImageUrl}
                                                                 alt="img"
-                                                                className="sm:h-38 sm:w-38 h-24 w-24 rounded-md object-contain object-center"
-                                                            />
+                                                                className="sm:h-38 sm:w-38 h-24 w-24 rounded-md object-contain object-center" />
                                                         </div>
 
                                                         <div className="ml-4 flex flex-1 flex-col justify-between sm:ml-6">
@@ -149,14 +147,13 @@ const CartPage = () => {
                                                     </li>
                                                     <div className="mb-2 flex">
                                                         <div className="min-w-24 flex">
-                                                            <button onClick={() => handleDecrement(id)} type="button" className="h-7 w-7" >
+                                                            <button onClick={() => handleDecrement(id)} type="button" className="h-7 w-7">
                                                                 -
                                                             </button>
                                                             <input
                                                                 type="text"
                                                                 className="mx-1 h-7 w-9 rounded-md border text-center"
-                                                                value={quantity}
-                                                            />
+                                                                value={quantity} />
                                                             <button onClick={() => handleIncrement(id)} type="button" className="flex h-7 w-7 items-center justify-center">
                                                                 +
                                                             </button>
@@ -169,7 +166,7 @@ const CartPage = () => {
                                                         </div>
                                                     </div>
                                                 </div>
-                                            )
+                                            );
                                         })}
                                     </>
                                     :
@@ -211,9 +208,7 @@ const CartPage = () => {
                                             ? <BuyNowModal
                                                 addressInfo={addressInfo}
                                                 setAddressInfo={setAddressInfo}
-                                                buyNowFunction={buyNowFunction}
-                                            /> : <Navigate to={'/login'}/>
-                                        }
+                                                buyNowFunction={buyNowFunction} /> : <Navigate to={'/login'} />}
                                     </div>
                                 </div>
                             </div>
