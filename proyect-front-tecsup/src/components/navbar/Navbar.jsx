@@ -1,101 +1,75 @@
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
 import { useSelector } from "react-redux";
-
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
-    // get user from localStorage 
-    const user = JSON.parse(localStorage.getItem('users'));
-
-    // navigate 
     const navigate = useNavigate();
 
-    // logout function 
-    const logout = () => {
-        localStorage.clear('users');
-        navigate("/")
-    }
+    // Estado del usuario
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem("users")) || null);
 
-    // CartItems
+    // Monitorear cambios en localStorage
+    useEffect(() => {
+        const checkUser = () => {
+            setUser(JSON.parse(localStorage.getItem("users")) || null);
+        };
+        window.addEventListener("storage", checkUser);
+        return () => window.removeEventListener("storage", checkUser);
+    }, []);
+
+    const logout = () => {
+        localStorage.clear();
+        setUser(null); // Actualiza el estado al hacer logout
+        navigate("/");
+    };
+
     const cartItems = useSelector((state) => state.cart);
 
-    // navList Data
-    const navList = (
-        <ul className="flex space-x-3 text-white font-medium text-md px-5 ">
-            {/* Home */}
-            <li>
-                <Link to={'/'}>Home</Link>
-            </li>
-
-            {/* All Product */}
-            <li>
-                <Link to={'/allproduct'}>All Product</Link>
-            </li>
-
-            {/* Signup */}
-            {!user ? <li>
-                <Link to={'/signup'}>Signup</Link>
-            </li> : ""}
-
-            {/* Signup */}
-            {!user ? <li>
-                <Link to={'/login'}>Login</Link>
-            </li> : ""}
-
-            {/* User */}
-            {user?.role === "user" && <li>
-                <Link to={'/user-dashboard'}>User</Link>
-            </li>}
-
-            {/* Admin */}
-            {user?.role === "admin" && <li>
-                <Link to={'/admin-dashboard'}>Admin</Link>
-            </li>}
-
-            {/* logout */}
-            {user && <li className=" cursor-pointer" onClick={logout}>
-                logout
-            </li>}
-
-            {/* Cart */}
-            <li>            
-                {user?.role === "user" && <li>
-                    <Link to={'/cart'}>
-                    Cart({cartItems.length})
-                    </Link></li>}
-                    
-                {/* <Link to={'/cart'}>
-                    Cart({cartItems.length})
-                </Link> */}
-            </li>
-            <li>
-                {user?.role !="user" && user?.role!="admin" &&
-                <span className="text-red-300 font-extrabold">to purchase, login or create an account</span>
-                }
-            </li>
-        </ul>
-    )
     return (
         <nav className="bg-cyan-900 sticky top-0">
-            {/* main  */}
             <div className="lg:flex lg:justify-between items-center py-3 lg:px-3 ">
-                {/* left  */}
                 <div className="left py-3 lg:py-0">
                     <Link to={'/'}>
                         <h2 className=" font-bold text-white text-2xl text-center">E-Commerce</h2>
                     </Link>
                 </div>
 
-                {/* right  */}
                 <div className="right flex justify-center mb-4 lg:mb-0">
-                    {navList}
+                    <ul className="flex space-x-3 text-white font-medium text-md px-5 ">
+                        <li><Link to={'/'}>Home</Link></li>
+                        <li><Link to={'/allproduct'}>All Product</Link></li>
+
+                        {!user && (
+                            <>
+                                <li><Link to={'/signup'}>Signup</Link></li>
+                                <li><Link to={'/login'}>Login</Link></li>
+                            </>
+                        )}
+
+                        {user?.role === "user" && <li><Link to={'/user-dashboard'}>User</Link></li>}
+                        {user?.role === "admin" && <li><Link to={'/admin-dashboard'}>Admin</Link></li>}
+
+                        {user && <li className="cursor-pointer" onClick={logout}>Logout</li>}
+
+                        {user?.role === "user" && (
+                            <li><Link to={'/cart'}>Cart({cartItems.length})</Link></li>
+                        )}
+
+                        {!user && (
+                            <li>
+                                <span className="text-red-300 font-extrabold">
+                                    To purchase, login or create an account
+                                </span>
+                            </li>
+                        )}
+                    </ul>
                 </div>
 
-                {/* Search Bar  */}
                 <SearchBar />
             </div>
         </nav>
     );
-}
+};
 
 export default Navbar;
