@@ -1,199 +1,90 @@
-# 📦 Ecommerce API
+# 📦 Ecommerce Frontend
 
-Este documento detalla los endpoints disponibles en la API de Ecommerce.
+Este documento explica la configuración y uso del frontend del Ecommerce.
 
-## 🌐 **Base URL:**
-```
-http://127.0.0.1:8000/api/
-```
+## 🚀 **Instalación y Configuración**
 
----
-
-## 🔐 **Autenticación** (JWT)
-
-### 🟢 **Login**
-**Endpoint:**
-```
-POST /auth/login/
-```
-**Body:** (JSON)
-```json
-{
-  "email": "admin@example.com",
-  "password": "123456"
-}
-```
-**Respuesta Exitosa (200):**
-```json
-{
-  "access": "token_aqui",
-  "refresh": "refresh_token_aqui"
-}
+### 📌 **1. Clonar el Repositorio**
+```sh
+git clone https://github.com/jdiazravenna/tecsupProyecto
+cd proyect-front-tecsup
 ```
 
-### 🟢 **Registrar Usuario**
-**Endpoint:**
-```
-POST /auth/register/
-```
-**Body:** (JSON)
-```json
-{
-    "username": "tomymorerezza1",
-    "email": "tomy@example2.com",
-    "password": "password",
-    "phone_number": "1234567890",
-    "address": "123 Street",
-    "profile_picture": null,
-    "role": "admin"
-}
-
+### 📌 **2. Instalar Dependencias**
+```sh
+npm install
 ```
 
-### 🔄 **Refrescar Token**
-**Endpoint:**
+### 📌 **3. Configurar Variables de Entorno**
+Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 ```
-POST /auth/refresh/
+REACT_APP_API_URL=http://127.0.0.1:8000/api/
 ```
-**Body:** (JSON)
-```json
-{
-  "refresh": "refresh_token_aqui"
-}
+
+### 📌 **4. Ejecutar el Proyecto**
+```sh
+npm start
 ```
+El frontend se ejecutará en `http://localhost:3000`
 
 ---
 
-## 🛍 **Productos**
+## 🌐 **Rutas del Proyecto**
 
-### 🔍 **Obtener Todos los Productos**
-**Endpoint:**
-```
-GET /products/
-```
-**Headers:**
-```
-Authorization: Bearer token_aqui
-```
-**Respuesta (200):**
-```json
-[
-  {
-    "id": 1,
-    "name": "Laptop",
-    "price": 1000,
-    "category": "laptop",
-    "description": "Laptop potente"
-  }
-]
-```
-
-### 🔍 **Obtener Producto por ID**
-**Endpoint:**
-```
-GET /products/{id}/
-```
-
-### ➕ **Crear Producto (Admin)**
-**Endpoint:**
-```
-POST /products/
-```
-**Headers:**
-```
-Authorization: Bearer token_aqui
-```
-**Body:** (JSON)
-```json
-{
-  "name": "Celular",
-  "price": 500,
-  "category": "mobile",
-  "description": "Celular de gama alta"
-}
-```
-
-### 📝 **Actualizar Producto (Admin)**
-**Endpoint:**
-```
-PUT /products/{id}/
-```
-
-### 🗑 **Eliminar Producto (Admin)**
-**Endpoint:**
-```
-DELETE /products/{id}/
-```
+| Ruta | Descripción |
+|------|------------|
+| `/` | Página principal |
+| `/login` | Iniciar sesión |
+| `/register` | Registro de usuario |
+| `/products` | Lista de productos |
+| `/product/:id` | Detalle de un producto |
+| `/cart` | Carrito de compras |
+| `/checkout` | Finalizar compra |
+| `/admin-dashboard` | Panel de administración (requiere permisos) |
 
 ---
 
-## 🛒 **Órdenes**
-
-### 🔍 **Obtener Todas las Órdenes (Admin)**
-**Endpoint:**
-```
-GET /orders/
-```
-
-### ➕ **Crear Orden**
-**Endpoint:**
-```
-POST /orders/
-```
-**Body:** (JSON)
-```json
-{
-  "user": 1,
-  "products": [
-    { "id": 2, "quantity": 1 },
-    { "id": 3, "quantity": 2 }
-  ],
-  "total_price": 1500
-}
-```
-
-### 🔍 **Obtener Orden por ID**
-**Endpoint:**
-```
-GET /orders/{id}/
-```
-
-### 📝 **Actualizar Estado de Orden (Admin)**
-**Endpoint:**
-```
-PUT /orders/{id}/
-```
-
-### 🗑 **Eliminar Orden (Admin)**
-**Endpoint:**
-```
-DELETE /orders/{id}/
-```
+## 🔐 **Autenticación y Protección de Rutas**
+- El sistema usa **JWT** para autenticación.
+- Los tokens se almacenan en `localStorage`.
+- Las rutas protegidas requieren inicio de sesión y permisos adecuados.
 
 ---
 
-## 👤 **Usuarios**
-
-### 🔍 **Obtener Todos los Usuarios (Admin)**
-**Endpoint:**
-```
-GET /auth/users/
-```
-
-### 🔍 **Obtener Usuario por ID**
-**Endpoint:**
-```
-GET /auth/users/{id}/
-```
+## 🛍 **Gestión de Productos**
+- Los productos se obtienen desde `GET /products/`.
+- Se pueden **agregar, editar y eliminar** desde el panel de administración.
 
 ---
 
-## 🔧 **Extras**
-- Todas las peticiones **protegidas** requieren autenticación con JWT.
-- Para probar los endpoints, puedes usar **Postman** o la interfaz de **Swagger** (`/swagger/`).
-- Para obtener un usuario admin, crea uno manualmente en la base de datos o modifica su `role` tras registrarlo.
+## 🛒 **Carrito de Compras**
+- Se maneja con Redux.
+- Los datos se guardan en `localStorage` para persistencia.
+- Se pueden agregar y eliminar productos en la página del carrito.
 
 ---
 
-📌 **Hecho con ❤️ para el Ecommerce API** 🚀
+## 📦 **Órdenes**
+- Al hacer checkout, se envía una petición `POST /orders/`.
+- Los usuarios pueden ver sus órdenes en `GET /orders/`.
+- Los administradores pueden gestionar todas las órdenes.
+
+---
+
+## 🛠 **Tecnologías Usadas**
+✅ React.js
+✅ Redux (para estado global)
+✅ React Router (para navegación)
+✅ Tailwind CSS (para estilos)
+✅ Firebase (para almacenamiento si es necesario)
+✅ React Hot Toast (para notificaciones)
+
+---
+
+## 📝 **Notas Finales**
+- El proyecto está en desarrollo, puedes contribuir mejorando el código.
+- Asegúrate de que el backend esté ejecutándose antes de probar el frontend.
+- Para errores o mejoras, abre un issue en el repositorio.
+
+📌 **¡Listo para usar! 🚀**
 
