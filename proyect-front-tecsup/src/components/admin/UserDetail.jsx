@@ -59,7 +59,7 @@ const UserDetail = () => {
 
                                             <td
                                                 className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                {value.name}
+                                                {value.username}
                                             </td>
 
                                             <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 cursor-pointer ">
@@ -67,7 +67,7 @@ const UserDetail = () => {
                                             </td>
 
                                             <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500  cursor-pointer ">
-                                                {value.uid}
+                                                {value.phone_number}
                                             </td>
 
                                             <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500  cursor-pointer ">

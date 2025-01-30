@@ -40,14 +40,14 @@ const HomePageProductCard = () => {
                     <div className="flex justify-center">{loading && <Loader />}</div>
                     <div className="flex flex-wrap -m-4">
                         {getAllProduct.slice(0, 8).map((item, index) => {
-                            const { id, title, price, productImageUrl } = item;
+                            const { id, name, price, image } = item;
                             return (
                                 <div key={index} className="p-4 w-full sm:w-1/2 lg:w-1/4">
                                     <div className="h-full border border-gray-200 rounded-lg shadow-sm transition-transform transform hover:scale-105 cursor-pointer overflow-hidden">
                                         <img
                                             onClick={() => navigate(`/productinfo/${id}`)}
                                             className="h-64 w-full object-cover"
-                                            src={productImageUrl}
+                                            src={image}
                                             alt="Product"
                                         />
                                         <div className="p-6">
@@ -55,7 +55,7 @@ const HomePageProductCard = () => {
                                                 E-Commerce
                                             </h2>
                                             <h1 className="text-lg font-semibold text-gray-900 mb-2 truncate">
-                                                {title}
+                                                {name}
                                             </h1>
                                             <h1 className="text-lg font-semibold text-green-700 mb-4">
                                                 S/ {price}

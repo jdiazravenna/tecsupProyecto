@@ -104,7 +104,7 @@ const OrderDetail = () => {
                                 return (
                                     <>
                                         {order.cartItems.map((item, index) => {
-                                            const { id, productImageUrl, title, category, price, quantity } = item
+                                            const { id, image, name, category, price, stock } = item
                                             return (
                                                 <tr key={index} className="text-black">
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 ">
@@ -116,11 +116,11 @@ const OrderDetail = () => {
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        <img src={productImageUrl} alt="img" />
+                                                        <img src={image} alt="img" />
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {title}
+                                                        {name}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
@@ -132,11 +132,11 @@ const OrderDetail = () => {
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        {quantity}
+                                                        {stock}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l first:border-l-0 border-black stroke-slate-500 text-slate-500 first-letter:uppercase ">
-                                                        S/ {price * quantity}
+                                                        S/ {price * stock}
                                                     </td>
 
                                                     <td className="h-12 px-6 text-md transition duration-300 border-t border-l text-green-600  first:border-l-0 border-black  stroke-slate-500 text-slate-500 first-letter:uppercase ">

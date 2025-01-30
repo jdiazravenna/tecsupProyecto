@@ -70,7 +70,7 @@ const UserDashboard = () => {
                                 <div key={index}>
                                     {order.cartItems.map((item, index) => {
                                         // console.log('item', item);
-                                        const { id, date, quantity, price, title, productImageUrl, category } = item
+                                        const { id, date, stock, price, name, image, category } = item
                                         // console.log('order', order)
                                         const { status } = order
                                         return (
@@ -92,7 +92,7 @@ const UserDashboard = () => {
 
                                                             <div className="mb-4">
                                                                 <div className="text-sm font-semibold">Total Amount</div>
-                                                                <div className="text-sm font-medium text-gray-900">S/ {price * quantity}</div>
+                                                                <div className="text-sm font-medium text-gray-900">S/ {price * stock}</div>
                                                             </div>
 
                                                             <div className="mb-4">
@@ -116,18 +116,18 @@ const UserDashboard = () => {
                                                                     <div className="flex-shrink-0">
                                                                         <img
                                                                             className="h-40 w-40 rounded-lg border border-gray-200 object-contain"
-                                                                            src={productImageUrl}
+                                                                            src={image}
                                                                             alt="img"
                                                                         />
                                                                     </div>
 
                                                                     <div className="ml-5 flex flex-col justify-between">
                                                                         <div className="flex-1">
-                                                                            <p className="text-sm font-bold text-gray-900">{title}</p>
+                                                                            <p className="text-sm font-bold text-gray-900">{name}</p>
                                                                             <p className="mt-1.5 text-sm font-medium text-gray-500">{category}</p>
                                                                         </div>
 
-                                                                        <p className="mt-4 text-sm font-medium text-gray-500">x {quantity}</p>
+                                                                        <p className="mt-4 text-sm font-medium text-gray-500">x {stock}</p>
                                                                     </div>
                                                                 </div>
 

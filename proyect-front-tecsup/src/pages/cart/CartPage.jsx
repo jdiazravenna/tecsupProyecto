@@ -28,9 +28,9 @@ const CartPage = () => {
 
     // const cartQuantity = cartItems.length;
 
-    const cartItemTotal = cartItems.map(item => item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
+    const cartItemTotal = cartItems.map(item => item.stock).reduce((prevValue, currValue) => prevValue + currValue, 0);
 
-    const cartTotal = cartItems.map(item => item.price * item.quantity).reduce((prevValue, currValue) => prevValue + currValue, 0);
+    const cartTotal = cartItems.map(item => item.price * item.stock).reduce((prevValue, currValue) => prevValue + currValue, 0);
 
 
     useEffect(() => {
@@ -112,13 +112,13 @@ const CartPage = () => {
 
                                     <>
                                         {cartItems.map((item, index) => {
-                                            const { id, title, price, productImageUrl, quantity, category } = item
+                                            const { id, title, price, image, stock, category } = item
                                             return (
                                                 <div key={index} className="">
                                                     <li className="flex py-6 sm:py-6 ">
                                                         <div className="flex-shrink-0">
                                                             <img
-                                                                src={productImageUrl}
+                                                                src={image}
                                                                 alt="img"
                                                                 className="sm:h-38 sm:w-38 h-24 w-24 rounded-md object-contain object-center"
                                                             />
@@ -154,7 +154,7 @@ const CartPage = () => {
                                                             <input
                                                                 type="text"
                                                                 className="mx-1 h-7 w-9 rounded-md border text-center"
-                                                                value={quantity}
+                                                                value={stock}
                                                             />
                                                             <button onClick={() => handleIncrement(id)} type="button" className="flex h-7 w-7 items-center justify-center">
                                                                 +

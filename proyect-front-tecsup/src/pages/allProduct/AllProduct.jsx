@@ -49,14 +49,14 @@ const AllProduct = () => {
                         </div>
                     <div className="flex flex-wrap -m-4">
                     {getAllProduct.map((item, index) => {
-                            const { id, title, price, productImageUrl } = item
+                            const { id, name, price, image } = item
                             return (
                                 <div key={index} className="p-4 w-full md:w-1/4">
                                     <div className="h-full border border-gray-300 rounded-xl overflow-hidden shadow-md cursor-pointer">
                                         <img
                                             onClick={() => navigate(`/productinfo/${id}`)}
                                              className="h-64 w-full object-cover"
-                                            src={productImageUrl}
+                                            src={image}
                                             alt="blog"
                                         />
                                         <div className="p-6">
@@ -64,7 +64,7 @@ const AllProduct = () => {
                                                 E-Commerce
                                             </h2>
                                             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
-                                                {title.substring(0, 25)}
+                                                {name.substring(0, 25)}
                                             </h1>
                                             <h1 className="title-font text-lg font-medium text-gray-900 mb-3">
                                                 S/ {price}

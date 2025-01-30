@@ -9,9 +9,9 @@ export const cartSlice = createSlice({
         addToCart(state, action) {
             const existingItem = state.find(item => item.id === action.payload.id);
             if (existingItem) {
-                existingItem.quantity++;
+                existingItem.stock++;
             } else {
-                state.push({ ...action.payload, quantity: 1 });
+                state.push({ ...action.payload, stock: 1 });
             }
         },
         deleteFromCart(state, action) {
@@ -20,13 +20,13 @@ export const cartSlice = createSlice({
         incrementQuantity(state, action) {
             const item = state.find(item => item.id === action.payload);
             if (item) {
-                item.quantity++;
+                item.stock++;
             }
         },
         decrementQuantity(state, action) {
             const item = state.find(item => item.id === action.payload);
-            if (item && item.quantity > 1) {
-                item.quantity--;
+            if (item && item.stock > 1) {
+                item.stock--;
             }
         },
     },
