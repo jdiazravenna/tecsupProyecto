@@ -1,6 +1,6 @@
 # 📦 Ecommerce Frontend
 
-Este documento explica la configuración y uso del frontend del Ecommerce.
+Este documento explica la configuración y uso del frontend del Ecommerce
 
 ## 🚀 **Instalación y Configuración**
 
