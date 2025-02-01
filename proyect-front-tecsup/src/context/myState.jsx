@@ -15,7 +15,7 @@ function MyState({ children }) {
   const getAllProductFunction = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/products/");
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/products/");
       const data = await response.json();
       setGetAllProduct(data);
     } catch (error) {
@@ -33,7 +33,7 @@ function MyState({ children }) {
   const getAllOrderFunction = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/orders/");
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/orders/");
       const data = await response.json();
       setGetAllOrder(data);
     } catch (error) {
@@ -46,7 +46,7 @@ function MyState({ children }) {
   const orderDelete = async (id) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/orders/${id}/`, {
+      const response = await fetch(`https://backend-final-tq3q.onrender.com/api/orders/${id}/`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -75,7 +75,7 @@ function MyState({ children }) {
         throw new Error("No token found");
       }
 
-      const response = await fetch("http://127.0.0.1:8000/api/auth/users/", {
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/auth/users/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

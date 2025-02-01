@@ -18,7 +18,7 @@ npm install
 ### 📌 **3. Configurar Variables de Entorno**
 Crea un archivo `.env` en la raíz del proyecto con las siguientes variables:
 ```
-REACT_APP_API_URL=http://127.0.0.1:8000/api/
+REACT_APP_API_URL=https://backend-final-tq3q.onrender.com/api/
 ```
 
 ### 📌 **4. Ejecutar el Proyecto**

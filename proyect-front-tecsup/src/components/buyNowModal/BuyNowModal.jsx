@@ -33,7 +33,7 @@ const BuyNowModal = ({ addressInfo, setAddressInfo }) => {
     try {
       const responses = await Promise.all(
         orders.map((order) =>
-          fetch("http://127.0.0.1:8000/api/orders/", {
+          fetch("https://backend-final-tq3q.onrender.com/api/orders/", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

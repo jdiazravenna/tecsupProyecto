@@ -470,7 +470,7 @@ function MyState({ children }) {
   const getAllProductFunction = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/products/");
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/products/");
       const data = await response.json();
       setGetAllProduct(data);
     } catch (error) {
@@ -488,7 +488,7 @@ function MyState({ children }) {
   const getAllOrderFunction = async () => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/orders/");
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/orders/");
       const data = await response.json();
       setGetAllOrder(data);
     } catch (error) {
@@ -501,7 +501,7 @@ function MyState({ children }) {
   const orderDelete = async (id) => {
     setLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/orders/${id}/`, {
+      const response = await fetch(`https://backend-final-tq3q.onrender.com/api/orders/${id}/`, {
         method: "DELETE",
       });
       if (response.ok) {
@@ -530,7 +530,7 @@ function MyState({ children }) {
         throw new Error("No token found");
       }
 
-      const response = await fetch("http://127.0.0.1:8000/api/auth/users/", {
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/auth/users/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -777,7 +777,7 @@ const ProductInfo = () => {
   const getProductData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/products/${id}/`);
+      const response = await fetch(`https://backend-final-tq3q.onrender.com/api/products/${id}/`);
 
       if (!response.ok) {
         throw new Error(`Error HTTP: ${response.status}`);
@@ -991,7 +991,7 @@ const Signup = () => {
 
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/auth/register/", {
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/auth/register/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -1170,7 +1170,7 @@ const Login = () => {
   
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/auth/login/", {
+      const response = await fetch("https://backend-final-tq3q.onrender.com/api/auth/login/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -3940,7 +3940,7 @@ const UpdateProductPage = () => {
       console.log("Fetching product with ID:", id);
 
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/${id}/`,
+        `https://backend-final-tq3q.onrender.com/api/products/${id}/`,
         {
           method: "GET",
           headers: { "Content-Type": "application/json" },
@@ -3980,7 +3980,7 @@ const UpdateProductPage = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/${id}/`,
+        `https://backend-final-tq3q.onrender.com/api/products/${id}/`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -4374,7 +4374,7 @@ const AddProductPage = () => {
 
         setLoading(true);
         try {
-            const response = await fetch("http://127.0.0.1:8000/api/products/", {
+            const response = await fetch("https://backend-final-tq3q.onrender.com/api/products/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(product),
@@ -5340,7 +5340,7 @@ const ProductDetail = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/${id}/`,
+        `https://backend-final-tq3q.onrender.com/api/products/${id}/`,
         {
           method: "DELETE",
         }

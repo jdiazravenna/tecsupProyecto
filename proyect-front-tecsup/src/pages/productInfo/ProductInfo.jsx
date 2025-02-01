@@ -25,7 +25,7 @@ const ProductInfo = () => {
   const getProductData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://127.0.0.1:8000/api/products/${id}/`);
+      const response = await fetch(`https://backend-final-tq3q.onrender.com/api/products/${id}/`);
 
       if (!response.ok) {
         throw new Error(`Error HTTP: ${response.status}`);

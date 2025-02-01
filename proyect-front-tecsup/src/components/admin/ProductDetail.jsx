@@ -19,7 +19,7 @@ const ProductDetail = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/products/${id}/`,
+        `https://backend-final-tq3q.onrender.com/api/products/${id}/`,
         {
           method: "DELETE",
         }
