@@ -70,11 +70,11 @@ const Login = () => {
 
         <div className="mb-4">
           <label className="block text-gray-600 text-sm font-medium mb-2">
-            Email
+            Username
           </label>
           <input
             type="email"
-            placeholder="Ingresa tu email"
+            placeholder="Ingresa tu username"
             value={userLogin.email}
             onChange={(e) =>
               setUserLogin({ ...userLogin, email: e.target.value })

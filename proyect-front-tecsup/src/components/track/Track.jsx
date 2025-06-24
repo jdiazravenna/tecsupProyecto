@@ -1,52 +1,76 @@
-const Track = () => {
-    return (
-        <section>
-            <div className=" container mx-auto px-5 py-10 md:py-14">
-                {/* main  */}
-                <div className="flex flex-wrap -m-4 text-center">
-                    {/* Track 1 */}
-                    <div className="p-4 md:w-1/3 sm:w-1/2 w-full">
-                        <div className="border-2 border-gray-200 bg-gray-100 shadow-[inset_0_0_2px_rgba(0,0,0,0.6)] px-4 py-6 rounded-lg"  >
-                            <svg className="text-black w-12 h-12 mb-3 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
+const Features = () => {
+  return (
+    <section className="bg-white py-10 border-t border-gray-200">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-2xl font-bold text-gray-800 mb-8">
+          ¿Por qué comprar con nosotros?
+        </h2>
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <svg
+              className="w-10 h-10 mx-auto text-blue-600 mb-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 8c1.5 0 3.5 1.12 4.6 2.75 1.1 1.6 1.4 3.5.6 5.25-.9 1.8-2.7 3-5.2 3s-4.3-1.2-5.2-3c-.8-1.75-.5-3.65.6-5.25C8.5 9.12 10.5 8 12 8z"
+              />
+            </svg>
+            <h3 className="text-lg font-semibold mb-2">Calidad Garantizada</h3>
+            <p className="text-sm text-gray-600">
+              Trabajamos con proveedores verificados para ofrecerte lo mejor del
+              mercado.
+            </p>
+          </div>
 
-                            <h2 className="title-font font-medium text-lg text-gray-900" >Productos Premium</h2>
-                            <p className="leading-relaxed">Nuestra ropa es 100% algodón.
-                            </p>
-                        </div>
-                    </div>
+          <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <svg
+              className="w-10 h-10 mx-auto text-green-600 mb-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 10h2l1 2h13l1-2h2M5 18h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z"
+              />
+            </svg>
+            <h3 className="text-lg font-semibold mb-2">Envíos Rápidos</h3>
+            <p className="text-sm text-gray-600">
+              Recibe tu producto en 24 a 48 horas según tu ubicación.
+            </p>
+          </div>
 
-                    {/* Track 2 */}
-                    <div className="p-4 md:w-1/3 sm:w-1/2 w-full">
-                        <div className="border-2 border-gray-200 bg-gray-100 shadow-[inset_0_0_2px_rgba(0,0,0,0.6)] px-4 py-6 rounded-lg"  >
-                            <svg className="text-black w-12 h-12 mb-3 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
+          <div className="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+            <svg
+              className="w-10 h-10 mx-auto text-yellow-600 mb-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 12l2 2 4-4m2-2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <h3 className="text-lg font-semibold mb-2">Pago Seguro</h3>
+            <p className="text-sm text-gray-600">
+              Tus datos están protegidos con encriptación SSL y pasarelas
+              certificadas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-                            <h2 className="title-font font-medium text-lg text-gray-900" >Equipos electrónicos</h2>
-                            <p className="leading-relaxed">Contamos con la mejores marcas del mundo.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* Track 3  */}
-                    <div className="p-4 md:w-1/3 sm:w-1/2 w-full">
-                        <div className="border-2 border-gray-200 bg-gray-100 shadow-[inset_0_0_2px_rgba(0,0,0,0.6)] px-4 py-6 rounded-lg"  >
-                            <svg className="text-black w-12 h-12 mb-3 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
-
-                            <h2 className="title-font font-medium text-lg text-gray-900" >Te falta algo en tu hogar?</h2>
-                            <p className="leading-relaxed">Consigue todo lo que necesites.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    );
-}
-
-export default Track;
+export default Features;

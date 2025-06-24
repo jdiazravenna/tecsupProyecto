@@ -1,58 +1,64 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import myContext from "../../context/myContext";
-import { useNavigate } from "react-router";
-
+import { Search } from "lucide-react";
 
 const SearchBar = () => {
-    const context = useContext(myContext);
-    const { getAllProduct } = context
-    // Search State 
-    const [search, setSearch] = useState("");
+  const { getAllProduct } = useContext(myContext);
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
-    // Filter Search Data
-    const filterSearchData = getAllProduct.filter((obj) => obj.name.toLowerCase().includes(search)).slice(0, 8)
+  const filterSearchData = getAllProduct
+    .filter((obj) =>
+      obj.name.toLowerCase().includes(search.toLowerCase())
+    )
+    .slice(0, 8);
 
-    const navigate = useNavigate();
+  return (
+    <div className="relative w-full max-w-md mx-auto">
+      {/* Input */}
+      <div className="relative">
+        <Search className="absolute left-3 top-2.5 text-gray-500" size={18} />
+        <input
+          type="text"
+          placeholder="Search products..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full pl-10 pr-4 py-2 rounded-md bg-white border border-gray-300 focus:ring-2 focus:ring-cyan-500 focus:outline-none text-sm shadow-sm"
+        />
+      </div>
 
-    return (
-        <div className="">
-            {/* search input  */}
-            <div className="input flex justify-center">
-                <input
-                    type="text"
-                    placeholder='Search here'
-                    onChange={(e) => setSearch(e.target.value)}
-                    className=' bg-gray-200 placeholder-gray-400 rounded-lg px-2 py-2 w-96 lg:w-96 md:w-96 outline-none text-black '
-                />
+      {/* Result Dropdown */}
+      {search && (
+        <div className="absolute z-50 mt-2 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-80 overflow-y-auto">
+          {filterSearchData.length > 0 ? (
+            filterSearchData.map((item, index) => (
+              <div
+                key={index}
+                onClick={() => {
+                  navigate(`/productinfo/${item.id}`);
+                  setSearch(""); // opcional: limpiar input tras click
+                }}
+                className="flex items-center gap-3 p-2 hover:bg-gray-100 cursor-pointer"
+              >
+                <img src={item.image} alt={item.name} className="w-10 h-10 object-contain" />
+                <span className="text-sm text-gray-800">{item.name}</span>
+              </div>
+            ))
+          ) : (
+            <div className="p-4 text-center text-gray-500 text-sm">
+              <img
+                src="https://cdn-icons-png.flaticon.com/128/10437/10437090.png"
+                alt="no result"
+                className="w-12 mx-auto mb-2"
+              />
+              No results found.
             </div>
-
-            {/* search drop-down  */}
-            <div className=" flex justify-center">
-                {search && <div className="block absolute bg-gray-200 w-96 md:w-96 lg:w-96 z-50 my-1 rounded-lg px-2 py-2">
-                    {filterSearchData.length > 0 ?
-                        <>
-                            {filterSearchData.map((item, index) => {
-                                return (
-                                    <div key={index} className="py-2 px-2 cursor-pointer" onClick={() => navigate(`/productinfo/${item.id}`)}>
-                                        <div className="flex items-center gap-2">
-                                            <img className="w-10" src={item.image} alt="" />
-                                            {item.title}
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                        </>
-                        :
-                        <>
-                            <div className="flex justify-center">
-                                <img className=" w-20" src="https://cdn-icons-png.flaticon.com/128/10437/10437090.png" alt="img" />
-                            </div>
-                        </>}
-                </div>
-                }
-            </div>
+          )}
         </div>
-    );
-}
+      )}
+    </div>
+  );
+};
 
 export default SearchBar;

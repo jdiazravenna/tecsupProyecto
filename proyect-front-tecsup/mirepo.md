@@ -133,7 +133,7 @@ export default {
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Tecsup</title>
+    <title>proyecto unmsm</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   </head>
   <body>
@@ -1832,7 +1832,7 @@ uploadProducts();
         "title": "Trendy Summer Dress",
         "description": "Stylish and comfortable for everyday wear.",
         "price": "353",
-        "productImageUrl": "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
+        "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s",
         "quantity": 18,
         "date": "Nov 07, 2024",
         "time": "2024-11-07T02:40:49.638828"
@@ -1842,7 +1842,7 @@ uploadProducts();
         "title": "Trendy Summer Dress",
         "description": "Stylish and comfortable for everyday wear.",
         "price": "116",
-        "productImageUrl": "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
+        "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s",
         "quantity": 91,
         "date": "Nov 07, 2024",
         "time": "2024-11-07T02:40:49.638853"
@@ -1852,7 +1852,7 @@ uploadProducts();
         "title": "Casual Day Out Dress",
         "description": "Elegant choice for special occasions.",
         "price": "455",
-        "productImageUrl": "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
+        "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s",
         "quantity": 8,
         "date": "Nov 07, 2024",
         "time": "2024-11-07T02:40:49.638864"
@@ -1862,7 +1862,7 @@ uploadProducts();
         "title": "Trendy Summer Dress",
         "description": "Elegant choice for special occasions.",
         "price": "431",
-        "productImageUrl": "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
+        "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s",
         "quantity": 100,
         "date": "Nov 07, 2024",
         "time": "2024-11-07T02:40:49.638877"
@@ -1872,7 +1872,7 @@ uploadProducts();
         "title": "Trendy Summer Dress",
         "description": "Perfect for summer vibes and casual outings.",
         "price": "201",
-        "productImageUrl": "https://cdn-icons-png.flaticon.com/256/4359/4359963.png",
+        "productImageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s",
         "quantity": 28,
         "date": "Nov 07, 2024",
         "time": "2024-11-07T02:40:49.638887"
@@ -4526,7 +4526,7 @@ const Testimonial = () => {
                   src="https://via.placeholder.com/80"
                 />
                 <p className="leading-relaxed">
-                  I am Francesca Rezza, a passionate technology enthusiast and a
+                  I am , a passionate technology enthusiast and a
                   Systems Engineering student. I'm on a journey to become a
                   skilled Full Stack Developer, with a strong interest in
                   continuous learning and embracing new challenges. My goal is
@@ -4535,7 +4535,7 @@ const Testimonial = () => {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
-                  Francesca Rezza
+                  
                 </h2>
                 <p className="text-gray-500">Systems Engineering Student</p>
               </div>
@@ -4557,7 +4557,7 @@ const Testimonial = () => {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
-                  Juan Díaz Ravenna
+                   
                 </h2>
                 <p className="text-gray-500">Senior Product Designer</p>
               </div>
@@ -4579,7 +4579,7 @@ const Testimonial = () => {
                 </p>
                 <span className="inline-block h-1 w-10 rounded bg-pink-500 mt-6 mb-4" />
                 <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm capitalize">
-                  Joao Díaz Ravenna
+                   
                 </h2>
                 <p className="text-gray-500">CTO</p>
               </div>
@@ -5033,7 +5033,7 @@ import { useNavigate } from "react-router";
 // category 
 const category = [
     {
-        image: 'https://cdn-icons-png.flaticon.com/256/4359/4359963.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXuh5I1A5R1oEKiRGCTHXKq0U43a85QUGlXA&s',
         name: 'fashion'
     },
     {
